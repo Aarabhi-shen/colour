@@ -97,4 +97,35 @@ function generateFromColorName() {
   }
 }
 
-generatePalette(); // default on load
+function generateContrastPalette() {
+  const input = document.getElementById('hexInput').value.trim().toLowerCase();
+  const hex = getHexFromColorName(input);
+
+  if (!hex) {
+    alert('Invalid color name. Try standard CSS color names like "red", "skyblue", etc.');
+    return;
+  }
+
+  const { h, s, l } = hexToHSL(hex);
+  const paletteEl = document.getElementById('palette');
+  paletteEl.innerHTML = '';
+
+  const contrastHues = [
+    (h + 180) % 360,
+    (h + 150) % 360,
+    (h + 210) % 360
+  ];
+
+  contrastHues.forEach(ch => {
+    const contrastHex = hslToHex(ch, Math.min(100, s + 10), 100 - l);
+    const box = document.createElement('div');
+    box.className = 'color-box';
+    box.style.backgroundColor = contrastHex;
+    box.style.color = getTextColor(ch, s, 100 - l);
+    box.textContent = contrastHex.toUpperCase();
+    paletteEl.appendChild(box);
+  });
+}
+
+generatePalette(); // Generate initial palette on load
+
