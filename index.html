@@ -1,0 +1,25 @@
+<!-- frontend/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dynamic Color Palette</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="controls">
+    <button onclick="generatePalette('light')">Light Palette</button>
+    <button onclick="generatePalette('medium')">Medium Palette</button>
+    <button onclick="generatePalette('dark')">Dark Palette</button>
+    <br/>
+    <input type="text" id="hexInput" placeholder="Enter color name (e.g. red, skyblue)">
+    <button onclick="generateFromColorName()">Generate From Color</button>
+  </div>
+
+  <div class="palette" id="palette"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
