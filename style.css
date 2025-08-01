@@ -1,0 +1,54 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.controls {
+  margin-bottom: 20px;
+}
+.controls button, .controls input {
+  padding: 10px 15px;
+  margin: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.controls button {
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.controls button:hover {
+  background-color: #555;
+}
+.palette {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  max-width: 700px;
+  width: 100%;
+  justify-content: center;
+}
+.color-box {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  user-select: none;
+  cursor: default;
+  text-shadow: 0 0 3px rgba(0,0,0,0.7);
+  transition: transform 0.2s ease;
+}
+.color-box:hover {
+  transform: scale(1.05);
+}
